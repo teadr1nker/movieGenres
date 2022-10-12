@@ -5,7 +5,7 @@ import pandas as pd
 import numpy as np
 import os
 
-minYear=1960
+minYear=1900
 
 print('Loading data')
 movies = pd.read_json('../data/sorted.json').sort_values('year')
@@ -29,12 +29,14 @@ for row in movies['genres']:
 #print(genres)
 print('Counting genres')
 data = np.zeros((len(years), len(genres)))
-    
+
+count=0
 for index, row in movies.iterrows():
   if row['year'] > minYear:
     for genre in row['genres']:
       data[years.index(row['year']), genres.index(genre)] += 1
-      print(f'{index+1}/{len(movies)}', end='\r')      
+    count+=1
+    print(f'{count}/{len(movies)}', end='\r')      
       
 np.save('../data/stacked.npy', data)
 
