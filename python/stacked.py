@@ -39,9 +39,10 @@ for index, row in movies.iterrows():
     print(f'{count}/{len(movies)}', end='\r')      
       
 np.save('../data/stacked.npy', data)
-plt.figure(figsize=(2560/64, 1440/64), dpi=64)
+dpi = 128
+plt.figure(figsize=(2560/dpi, 1440/dpi), dpi=dpi)
 print('Generating stacked plot')
 plt.stackplot(years, data.T)
-plt.legend(genres)
+plt.legend(genres, loc=2)
 #plt.show()
 plt.savefig('stackedPlot.png')
