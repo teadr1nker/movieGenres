@@ -3,7 +3,7 @@
 import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
-import os
+#import os
 
 minYear=1900
 
@@ -46,3 +46,8 @@ plt.stackplot(years, data.T)
 plt.legend(genres, loc=2)
 #plt.show()
 plt.savefig('stackedPlot.png')
+
+print('Normalizing data')
+for i in range(len(data)):
+  data[i] /= datap[i].sum()
+  print(f'{i}/{len(data)}')
