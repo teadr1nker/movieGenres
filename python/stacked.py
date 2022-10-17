@@ -49,5 +49,10 @@ plt.savefig('stackedPlot.png')
 
 print('Normalizing data')
 for i in range(len(data)):
-  data[i] /= datap[i].sum()
+  data[i] /= data[i].sum()
   print(f'{i}/{len(data)}')
+
+plt.clf()
+plt.stackplot(years, data.T)
+plt.legend(genres, loc=2)
+plt.savefig('normalizedStacked.png')  
