@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np
 import re
 
-data = pd.read_csv("../data/movies.csv")
+data = pd.read_csv("data/movies.csv")
 
 #print(data)
 
@@ -24,7 +24,7 @@ for index, row in data.iterrows():
   
   if id > 10240:
     break
-movies.to_json('../data/sorted.json')
+movies.to_json('data/sorted.json')
   
   
 

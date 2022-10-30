@@ -8,7 +8,7 @@ import numpy as np
 minYear=1900
 
 print('Loading data')
-movies = pd.read_json('../data/sorted.json').sort_values('year')
+movies = pd.read_json('data/sorted.json').sort_values('year')
     
 print('Loaded data')
 #find min
@@ -38,7 +38,7 @@ for index, row in movies.iterrows():
     count+=1
     print(f'{count}/{len(movies)}', end='\r')      
       
-np.save('../data/stacked.npy', data)
+np.save('data/stacked.npy', data)
 dpi = 128
 plt.figure(figsize=(2560/dpi, 1440/dpi), dpi=dpi)
 print('Generating stacked plot')
