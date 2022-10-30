@@ -21,9 +21,10 @@ for index, row in data.iterrows():
     movies.loc[id] = [row['movieId'], name, year, row['genres'].split('|')]
     id+=1
   print(f'{index}/{len(data)}', end='\r')
-  
-  if id > 10240:
-    break
+
+  # limit
+  #if id > 10240:
+    #break
 movies.to_json('data/sorted.json')
   
   
