@@ -4,7 +4,7 @@ import numpy as np
 import re
 
 data = pd.read_csv("data/movies.csv")
-
+#hello vim
 #print(data)
 
 movies = pd.DataFrame(columns=['id', 'title', 'year', 'genres'])
