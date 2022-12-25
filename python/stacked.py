@@ -5,7 +5,7 @@ import pandas as pd
 import numpy as np
 #import os
 
-minYear=1900
+minYear=1990
 
 print('Loading data')
 movies = pd.read_json('data/sorted.json').sort_values('year')
